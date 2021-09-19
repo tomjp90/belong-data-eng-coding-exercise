@@ -1,0 +1,121 @@
+-- ALTERNATIVE QUERIES
+(SELECT pc.day, pc.sensor_id, SUM(pc.hourly_counts) as Total_Pedestrians, si.sensor_description, si.sensor_name, si.latitude, si.longitude
+
+FROM ped_counts as pc
+
+INNER JOIN sensor_id as si
+ON (pc.sensor_id = si.sensor_id)
+
+WHERE pc.day = 'Monday'
+ 
+GROUP BY pc.sensor_id, pc.day, si.sensor_description, si.sensor_name, si.location, si.latitude, si.longitude
+
+ORDER BY SUM(pc.hourly_counts) DESC
+  
+LIMIT 10)
+
+UNION ALL
+
+(SELECT pc.day, pc.sensor_id, SUM(pc.hourly_counts) as Total_Pedestrians, si.sensor_description, si.sensor_name, si.latitude, si.longitude
+
+FROM ped_counts as pc
+
+INNER JOIN sensor_id as si
+ON (pc.sensor_id = si.sensor_id)
+
+WHERE pc.day = 'Tuesday'
+ 
+GROUP BY pc.sensor_id, pc.day, si.sensor_description, si.sensor_name, si.location, si.latitude, si.longitude
+
+ORDER BY SUM(pc.hourly_counts) DESC
+  
+LIMIT 10)
+
+UNION ALL
+
+(SELECT pc.day, pc.sensor_id, SUM(pc.hourly_counts) as Total_Pedestrians, si.sensor_description, si.sensor_name, si.latitude, si.longitude
+
+FROM ped_counts as pc
+
+LEFT JOIN sensor_id as si
+ON (pc.sensor_id = si.sensor_id)
+
+WHERE pc.day = 'Wednesday'
+ 
+GROUP BY pc.sensor_id, pc.day, si.sensor_description, si.sensor_name, si.location, si.latitude, si.longitude
+
+ORDER BY SUM(pc.hourly_counts) DESC
+  
+LIMIT 10)
+
+UNION ALL
+
+(SELECT pc.day, pc.sensor_id, SUM(pc.hourly_counts) as Total_Pedestrians, si.sensor_description, si.sensor_name, si.latitude, si.longitude
+
+FROM ped_counts as pc
+
+LEFT JOIN sensor_id as si
+ON (pc.sensor_id = si.sensor_id)
+
+WHERE pc.day = 'Thursday'
+ 
+GROUP BY pc.sensor_id, pc.day, si.sensor_description, si.sensor_name, si.location, si.latitude, si.longitude
+
+ORDER BY SUM(pc.hourly_counts) DESC
+  
+LIMIT 10)
+
+UNION ALL
+
+(SELECT pc.day, pc.sensor_id, SUM(pc.hourly_counts) as Total_Pedestrians, si.sensor_description, si.sensor_name, si.latitude, si.longitude
+
+FROM ped_counts as pc
+
+LEFT JOIN sensor_id as si
+ON (pc.sensor_id = si.sensor_id)
+
+WHERE pc.day = 'Friday'
+ 
+GROUP BY pc.sensor_id, pc.day, si.sensor_description, si.sensor_name, si.location, si.latitude, si.longitude
+
+ORDER BY SUM(pc.hourly_counts) DESC
+  
+LIMIT 10)
+
+UNION ALL
+
+(SELECT pc.day, pc.sensor_id, SUM(pc.hourly_counts) as Total_Pedestrians, si.sensor_description, si.sensor_name, si.latitude, si.longitude
+
+FROM ped_counts as pc
+
+LEFT JOIN sensor_id as si
+ON (pc.sensor_id = si.sensor_id)
+
+WHERE pc.day = 'Saturday'
+ 
+GROUP BY pc.sensor_id, pc.day, si.sensor_description, si.sensor_name, si.location, si.latitude, si.longitude
+
+ORDER BY SUM(pc.hourly_counts) DESC
+  
+LIMIT 10)
+
+UNION ALL
+
+(SELECT pc.day, pc.sensor_id, SUM(pc.hourly_counts) as Total_Pedestrians, si.sensor_description, si.sensor_name, si.latitude, si.longitude
+
+FROM ped_counts as pc
+
+LEFT JOIN sensor_id as si
+ON (pc.sensor_id = si.sensor_id)
+
+WHERE pc.day = 'Sunday'
+ 
+GROUP BY pc.sensor_id, pc.day, si.sensor_description, si.sensor_name, si.location, si.latitude, si.longitude
+
+ORDER BY SUM(pc.hourly_counts) DESC
+  
+LIMIT 10)
+
+
+
+
